@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  api:
+    image: sample-nodejs-express
+    build: .
+    networks:
+      - backend
+    ports:
+      - "4000:4100"
+    volumes:
+      - ./:/usr/src/app
+
+  web-cli:
+    image: sample-nodejs-express
+    networks:
+      - backend
+    command: sh
+
+networks:
+  backend:
+    driver: bridge
