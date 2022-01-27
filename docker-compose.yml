@@ -2,8 +2,7 @@ version: "3.9"
 
 services:
   api:
-    image: sample-nodejs-express
-    build: .
+    image: hongphuc5497/sample-nodejs-express
     networks:
       - backend
     ports:
@@ -12,7 +11,7 @@ services:
       - ./:/usr/src/app
 
   web-cli:
-    image: sample-nodejs-express
+    image: hongphuc5497/sample-nodejs-express
     networks:
       - backend
     command: sh
